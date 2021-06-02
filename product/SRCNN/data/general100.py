@@ -8,6 +8,11 @@ from google_drive_downloader import GoogleDriveDownloader as gdd
 #gdd.download_file_from_google_drive(file_id='0B7tU5Pj1dfCMVVdJelZqV0prWnM',
 #                                    dest_path='./General100.zip',
 #                                    unzip=True)
+from zipfile import ZipFile
+# Create a ZipFile Object and load sample.zip in it
+with ZipFile('General100.zip', 'r') as zipObj:
+   # Extract all the contents of zip file in current directory
+   zipObj.extractall()
 
 os.mkdir('./General-100/train')
 os.mkdir('./General-100/test')
