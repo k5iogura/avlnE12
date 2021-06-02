@@ -1,4 +1,5 @@
 import torch
+import os
 from torch import nn
 from torch import optim
 from torch.utils.data import DataLoader
@@ -6,6 +7,7 @@ from torch.autograd import Variable
 from torchvision.utils import save_image
 from tensorboardX import SummaryWriter
 
+from pdb import set_trace
 from pathlib import Path
 from math import log10
 
@@ -38,9 +40,11 @@ writer = SummaryWriter(log_dir="./log")
 #log_dir = Path(writer.log_dir)
 log_dir = Path("./log")
 sample_dir = log_dir / 'sample'
-sample_dir.mkdir(exist_ok=True)
+os.makedirs(sample_dir,exist_ok=True)
+# sample_dir.mkdir(exist_ok=True)
 weight_dir = log_dir / 'weights'
-weight_dir.mkdir(exist_ok=True)
+os.makedirs(weight_dir,exist_ok=True)
+# weight_dir.mkdir(exist_ok=True)
 
 for epoch in range(50000):
     model.train()
