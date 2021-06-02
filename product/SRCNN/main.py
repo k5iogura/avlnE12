@@ -34,8 +34,9 @@ optimizer = optim.Adam([{'params': model.conv1.parameters()},
                         {'params': model.conv3.parameters(), 'lr': 1e-5}],
                         lr=1e-4)
 
-writer = SummaryWriter()
-log_dir = Path(writer.log_dir)
+writer = SummaryWriter(log_dir="./log")
+#log_dir = Path(writer.log_dir)
+log_dir = Path("./log")
 sample_dir = log_dir / 'sample'
 sample_dir.mkdir(exist_ok=True)
 weight_dir = log_dir / 'weights'
@@ -63,7 +64,8 @@ for epoch in range(50000):
     writer.add_scalar('train/psnr', epoch_psnr / len(train_loader), global_step=epoch)
     print('[Epoch {}] Loss: {:.4f}, PSNR: {:.4f} dB'.format(epoch + 1, epoch_loss / len(train_loader), epoch_psnr / len(train_loader)))
 
-    if (epoch + 1) % 1000 != 0:
+   #if (epoch + 1) % 1000 != 0:
+    if (epoch + 1) % 100 != 0:
         continue
 
     model.eval()
