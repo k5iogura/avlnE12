@@ -1,4 +1,5 @@
 #!/bin/bash
 
 jupyter-nbconvert --to python train.ipynb
-echo run python3 train.py !!
+echo edit args --cuda option!
+echo run python3 train.py
