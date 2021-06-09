@@ -1,0 +1,14 @@
+train.ipynb
+viewres.ipynb
+testview.ipynb
+result/SRCNN/latest_weight.pth
+result/SRCNN-naive/latest_weight.pth
+result-comp10/SRCNN/latest_weight.pth
+result-comp10/SRCNN-c11/latest_weight.pth
+result-comp10/SRCNN-sym/latest_weight.pth
+result/SRCNN/dBhistory.npy
+result/SRCNN-naive/dBhistory.npy
+result-comp10/SRCNN/dBhistory.npy
+result-comp10/SRCNN-c11/dBhistory.npy
+result-comp10/SRCNN-sym/dBhistory.npy
+data/General-100/test/im_*.bmp
